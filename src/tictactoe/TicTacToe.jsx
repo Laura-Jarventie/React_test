@@ -14,6 +14,11 @@ export const TicTacToe = () => {
     const onSquareClick = (index) => {
         let strings = Array.from(gameState);
 
+        if (status.includes("Winner")) {
+            return
+        }
+
+  
         if (strings[index] !=="") {
             return;
         }
@@ -70,6 +75,26 @@ export const TicTacToe = () => {
     <div>
         <h1>Tic-Tac-Toe</h1>
         <Board gameState={gameState} onSquareClick={onSquareClick}/>
+       {!status.includes("Winner") && (
+        <>
+        <span>{status}</span>
+        <button onClick={()=> {
+            setGameState(initialBoard);
+            setIsXTurn(true);
+        }}>tyhjennä</button>
+        </>
+       )}
+
+{status.includes("Winner") && (
+        <>
+        <span style={{color: "green"}}>{status}</span>
+        <button style={{background: "green"}}
+        onClick={()=> {
+            setGameState(initialBoard);
+            setIsXTurn(true);
+        }}>Pelaa uudestaan</button>
+        </>
+       )}
     </div>
 </div>
     );
