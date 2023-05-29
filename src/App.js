@@ -7,6 +7,7 @@ import { Button } from "./pages/Button";
 import { Counters } from "./pages/Counters";
 import { Items } from "./pages/items";
 import { List } from "./pages/List";
+import { CssExc } from "./pages/CssExc";
 import { TicTacToe } from "./tictactoe/TicTacToe";
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="Counters" element={<Counters />} />
         <Route path="Items" element={<Items />} />
         <Route path="List" element={<List />} />
+        <Route path="CssExc" element={<CssExc />} />
         <Route path="TicTacToe" element={<TicTacToe />} />
         </Route>
       </Routes>
